@@ -30,7 +30,7 @@ function my_admin_page_callback() {
 }
 function my_shortcode_function() { 
 
-    return ?> <div id="app"></div> <?php ;
+    return '<div id="app"></div>';
 }
 
 add_shortcode('my_shortcode', 'my_shortcode_function');
