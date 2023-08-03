@@ -34,4 +34,4 @@ function enqueue_vue_script() {
     wp_enqueue_style('app-style', plugins_url('/testproject/dist/assets/index-fc5f319f.css', __FILE__));
 
 }
-add_action('admin_enqueue_scripts', 'enqueue_vue_script');
+add_action('wp_enqueue_scripts', 'enqueue_vue_script');
