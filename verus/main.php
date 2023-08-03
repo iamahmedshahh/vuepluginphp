@@ -25,6 +25,15 @@ function my_admin_page_callback() {
     <div class="wrap">
         <h1>My Admin Page</h1>
         <!-- Add your admin page content here -->
+        <div id="app">
+
+        </div>
     </div>
+
 <?php 
 }
+
+function enqueue_script() {
+    wp_enqueue_script('app', plugins_url('/testproject/dist/assets/index-d7bd537c.js', array(), null, true));
+}
+add_action('admin_enqueue_scripts', 'enqueue_script');
