@@ -29,11 +29,8 @@ function my_admin_page_callback() {
 <?php 
 }
 function my_shortcode_function($atts) { 
-    
-   ob_start(); // Start output buffering
-    my_admin_page_callback(); // Call your admin page callback
-    $output = ob_get_clean(); // Get the buffered output and clean the buffer
-    return $output;
+
+   return my_admin_page_callback();
 }
 
 add_shortcode('my_shortcode', 'my_shortcode_function');
