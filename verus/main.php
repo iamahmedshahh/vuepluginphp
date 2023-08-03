@@ -22,13 +22,9 @@ add_action('admin_menu', 'my_admin_menu_page');
 
 function my_admin_page_callback() {
     ?>
-    <div class="wrap">
         <h1>My Admin Page</h1>
-        <!-- Add your admin page content here -->
         <div id="app">
-
         </div>
-    </div>
 
 <?php 
 }
