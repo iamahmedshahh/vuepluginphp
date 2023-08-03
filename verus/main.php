@@ -34,6 +34,6 @@ function my_admin_page_callback() {
 }
 
 function enqueue_script() {
-    wp_enqueue_script('app', plugins_url('/testproject/dist/assets/index-d7bd537c.js', array(), null, true));
+    wp_enqueue_script('app', get_template_directory_uri() . '/testproject/dist/assets/index-d7bd537c.js', array(), null, true);
 }
 add_action('admin_enqueue_scripts', 'enqueue_script');
