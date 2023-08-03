@@ -30,9 +30,10 @@ function my_admin_page_callback() {
 }
 
 function enqueue_vue_script() {
-    wp_register_script('app-script', plugins_url('/testproject/dist/assets/index-d7bd537c.js', __FILE__), array(), null, true);
-    wp_enqueue_script('app-script');
-    wp_enqueue_style('app-style', plugins_url('/testproject/dist/assets/index-fc5f319f.css', __FILE__));
+    wp_register_script('app-script', get_template_directory_uri() . '/testproject/dist/assets/index-d7bd537c.js', array(), null, true);
+    wp_register_style('app-style', get_template_directory_uri() . '/testproject/dist/assets/index-fc5f319f.css');
 
+    wp_enqueue_script('app-script');
+    wp_enqueue_style('app-style');
 }
 add_action('wp_enqueue_scripts', 'enqueue_vue_script');
