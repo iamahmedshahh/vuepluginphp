@@ -31,8 +31,8 @@ function my_admin_page_callback() {
 
 function enqueue_vue_script() {
 
-    wp_enqueue_script('app-script', plugins_url('testproject/dist/assets/index-d7bd537c.js', __FILE__));
-    wp_enqueue_style('app-style', plugins_url('testproject/dist/assets/index-fc5f319f.css', __FILE__));
+    wp_enqueue_script('app-script', plugins_url('/testproject/dist/assets/index-d7bd537c.js', __FILE__));
+    wp_enqueue_style('app-style', plugins_url('/testproject/dist/assets/index-fc5f319f.css', __FILE__));
 
     // wp_register_script('app-script', get_template_directory_uri() . 'testproject/dist/assets/index-d7bd537c.js', array(), null, true);
     // wp_register_style('app-style', get_template_directory_uri() . 'testproject/dist/assets/index-fc5f319f.css');
