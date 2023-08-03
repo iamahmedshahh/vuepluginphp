@@ -28,9 +28,14 @@ function my_admin_page_callback() {
 
 <?php 
 }
-function my_shortcode_function($atts) { 
+function my_shortcode_function() { 
 
-   return my_admin_page_callback();
+    ?>
+        <h1>My Admin Page</h1>
+        <div id="app">
+        </div>
+
+<?php 
 }
 
 add_shortcode('my_shortcode', 'my_shortcode_function');
