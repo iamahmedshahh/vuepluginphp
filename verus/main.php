@@ -29,8 +29,8 @@ function my_admin_page_callback() {
 <?php 
 }
 
-function enqueue_script() {
+function enqueue_vue_script() {
     wp_enqueue_script('app', plugins_url('/testproject/dist/assets/index-d7bd537c.js', __FILE__), array(), null, true);
 
 }
-add_action('admin_enqueue_scripts', 'enqueue_script');
+add_action('admin_enqueue_scripts', 'enqueue_vue_script');
