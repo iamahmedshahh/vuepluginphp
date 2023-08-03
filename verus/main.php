@@ -28,13 +28,12 @@ function my_admin_page_callback() {
 
 <?php 
 }
-function my_shortcode_function($atts) { ?>
-   
-    <h1>My Admin Page</h1>
-        <div id="app">
-        </div>
+function my_shortcode_function($atts) { 
     
-    <?php
+   ob_start(); // Start output buffering
+    my_admin_page_callback(); // Call your admin page callback
+    $output = ob_get_clean(); // Get the buffered output and clean the buffer
+    return $output;
 }
 
 add_shortcode('my_shortcode', 'my_shortcode_function');
