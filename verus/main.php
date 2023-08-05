@@ -36,7 +36,7 @@ function my_shortcode_function() {
     <?php 
 }
 
-add_shortcode('vue_shortcode', 'my_admin_page_callback');
+add_shortcode('vue_shortcode', 'my_shortcode_function');
 
 function enqueue_vue_script() {
 
