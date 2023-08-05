@@ -29,14 +29,11 @@ function my_admin_page_callback() {
 <?php 
 }
 function my_shortcode_function() { 
-
-    ob_start();
 ?>
     <div id="app">
     </div> 
 
     <?php 
-    ob_get_clean();
 }
 
 add_shortcode('vue_shortcode', 'my_shortcode_function');
