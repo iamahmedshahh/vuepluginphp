@@ -29,11 +29,14 @@ function my_admin_page_callback() {
 <?php 
 }
 function my_shortcode_function() { 
-
-    echo '<div id="app"></div>';
+?>
+    <div id="app">
+    </div> 
+    
+    <?php 
 }
 
-add_shortcode('my_shortcode', 'my_shortcode_function');
+add_shortcode('vue_shortcode', 'my_shortcode_function');
 
 function enqueue_vue_script() {
 
