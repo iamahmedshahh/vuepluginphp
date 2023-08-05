@@ -32,11 +32,11 @@ function my_shortcode_function() {
 ?>
     <div id="app">
     </div> 
-    
+
     <?php 
 }
 
-add_shortcode('vue_shortcode', 'my_shortcode_function');
+add_shortcode('vue_shortcode', 'my_admin_page_callback');
 
 function enqueue_vue_script() {
 
