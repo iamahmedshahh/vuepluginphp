@@ -48,4 +48,4 @@ function enqueue_vue_script() {
     // wp_enqueue_script('app-script');
     // wp_enqueue_style('app-style');
 }
-add_action('wp_enqueue_scripts', 'enqueue_vue_script');
+add_action('admin_enqueue_scripts', 'enqueue_vue_script');
