@@ -30,12 +30,16 @@ function my_admin_page_callback() {
 }
 function my_shortcode_function() { 
     ob_start();
-?>
+    var_dump('Shortcode executed'); // Debug output
+    ?>
     <div id="app">
-    </div> 
-
-    <?php return ob_get_clean();
+        <!-- You can add content specific to the shortcode here -->
+    </div>
+    <?php
+    return ob_get_clean();
 }
+add_shortcode('vue_shortcode', 'my_shortcode_function');
+
 
 function enqueue_vue_script() {
 
