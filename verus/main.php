@@ -28,6 +28,14 @@ function my_admin_page_callback() {
 
 <?php 
 }
+function my_shortcode_function() { 
+    ob_start();
+?>
+    <div id="app">
+    </div> 
+
+    <?php return ob_get_clean();
+}
 
 function enqueue_vue_script() {
 
@@ -40,4 +48,4 @@ function enqueue_vue_script() {
     // wp_enqueue_script('app-script');
     // wp_enqueue_style('app-style');
 }
-add_action('admin_enqueue_scripts', 'enqueue_vue_script');
+add_action('wp_enqueue_scripts', 'enqueue_vue_script');
