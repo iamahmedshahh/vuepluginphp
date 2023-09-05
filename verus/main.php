@@ -30,17 +30,8 @@ function render_content() {
 }
 
 function render_shortcode() {
-    // Start output buffering
-    ob_start();
+    return '<div id="verusvueapp"></div>';
 
-    ?>
-    <div id="verusvueapp">
-    </div>
-    <?php
-
-    $shortcode_content = ob_get_clean();
-
-    echo $shortcode_content;
 }
 
 add_shortcode('vue_shortcode', 'render_shortcode');
