@@ -44,15 +44,6 @@ function admin_enqueue() {
 
     wp_enqueue_script('admin-script', plugins_url('/verusapi/dist/assets/index-da85dad1.js', __FILE__), array(), null, true);
     wp_enqueue_style('admin-style', plugins_url('/verusapi/dist/assets/index-37970cf5.css', __FILE__));
-
-    wp_localize_script(
-        'admin-script',
-        'vue-params',
-        array(
-           'ajax_url' => admin_url( 'vue-admin-page.php' ),
-           'nonce'    => wp_create_nonce( 'vue_nonce' )
-        )
-     );
 }
 
 function enqueue_vue_script() {
