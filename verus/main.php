@@ -24,7 +24,7 @@ add_action('admin_menu', 'my_admin_menu_page');
 function render_content() {
     ?>
         <h1>Verus Blocks</h1>
-        <div id="app">
+        <div id="verusvueapp">
         </div>
 <?php
 }
@@ -34,7 +34,7 @@ function render_shortcode() {
     ob_start();
 
     ?>
-    <div id="app">
+    <div id="verusvueapp">
     </div>
     <?php
 
