@@ -24,14 +24,14 @@ add_action('admin_menu', 'my_admin_menu_page');
 function render_content() {
     ?>
         <h1>Verus Blocks</h1>
-        <div id="verusvueapp">
+        <div id="plugin-verusvueapp">
         </div>
 <?php
 }
 
 function render_shortcode() {
 
-    return '<div id="verusvueapp"></div>';
+    return '<div id="plugin-verusvueapp"></div>';
 }
 
 add_shortcode('vue_shortcode', 'render_shortcode');
@@ -45,8 +45,8 @@ add_shortcode('vue_shortcode', 'render_shortcode');
 
 function enqueue_vue_script() {
 
-    wp_enqueue_script('fontend-script', plugins_url('/verusapi/dist/assets/index-9824926f.js', __FILE__), array(), null, true);
-    wp_enqueue_style('frontend-style', plugins_url('/verusapi/dist/assets/index-438d7313.css', __FILE__));
+    wp_enqueue_script('vue-fontend-script', plugins_url('/verusapi/dist/assets/index-63e4edbd.js', __FILE__), array(), null, true);
+    wp_enqueue_style('vue-frontend-style', plugins_url('/verusapi/dist/assets/index-438d7313.css', __FILE__));
 }
 
 add_action('admin_enqueue_scripts', 'enqueue_vue_script');
