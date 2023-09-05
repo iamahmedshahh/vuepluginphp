@@ -15,7 +15,7 @@ function my_admin_menu_page() {
         'vue-admin-page',   // Menu slug
         'render_content', // Callback function to render content
         //'dashicons-admin-plugins', // Icon URL or dashicon class
-        20 // Menu position
+        20, // Menu position
     );
 }
 add_action('admin_menu', 'my_admin_menu_page');
