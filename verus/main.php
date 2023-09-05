@@ -42,14 +42,14 @@ add_shortcode('vue_shortcode', 'render_shortcode');
 
 function admin_enqueue() {
 
-    wp_enqueue_script('adminscript', plugins_url('/verusapi/dist/assets/index-c7831571.js', __FILE__), array(), null, true);
-    wp_enqueue_style('adminstyle', plugins_url('/verusapi/dist/assets/index-37970cf5.css', __FILE__));
+    wp_enqueue_script('adminscript', plugins_url('/verusapi/dist/assets/index-2194d466.js', __FILE__), array(), null, true);
+    wp_enqueue_style('adminstyle', plugins_url('/verusapi/dist/assets/index-438d7313.css', __FILE__));
 }
 
 function enqueue_vue_script() {
 
-    wp_enqueue_script('fontendscript', plugins_url('/verusapi/dist/assets/index-c7831571.js', __FILE__), array(), null, true);
-    wp_enqueue_style('frontendstyle', plugins_url('/verusapi/dist/assets/index-37970cf5.css', __FILE__));
+    wp_enqueue_script('fontendscript', plugins_url('/verusapi/dist/assets/index-2194d466.js', __FILE__), array(), null, true);
+    wp_enqueue_style('frontendstyle', plugins_url('/verusapi/dist/assets/index-438d7313.css', __FILE__));
 }
 
 add_action('admin_enqueue_scripts', 'admin_enqueue');
