@@ -22,11 +22,12 @@ add_action('admin_menu', 'my_admin_menu_page');
 
 
 function render_content() {
-    ?>
+    /*?>
         <h1>Verus Blocks</h1>
         <div id="verusvueapp">
         </div>
-<?php
+<?php*/
+return '<div id="verusvueapp"></div>';
 }
 
 function render_shortcode() {
