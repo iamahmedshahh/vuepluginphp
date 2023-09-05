@@ -22,17 +22,25 @@ add_action('admin_menu', 'my_admin_menu_page');
 
 
 function render_content() {
-    /*?>
+    ?>
         <h1>Verus Blocks</h1>
         <div id="verusvueapp">
         </div>
-<?php*/
-return '<div id="verusvueapp"></div>';
+<?php
 }
 
 function render_shortcode() {
-    return '<div id="verusvueapp"></div>';
+    // Start output buffering
+    ob_start();
 
+    ?>
+    <div id="verusvueapp">
+    </div>
+    <?php
+
+    $shortcode_content = ob_get_clean();
+
+    echo $shortcode_content;
 }
 
 add_shortcode('vue_shortcode', 'render_shortcode');
