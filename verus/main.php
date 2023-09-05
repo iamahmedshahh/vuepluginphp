@@ -30,11 +30,17 @@ function render_content() {
 }
 
 function render_shortcode() {
+    // Start output buffering
+    ob_start();
+
     ?>
-        <h1>Verus Blocks</h1>
-        <div id="app">
-        </div>
-<?php
+    <div id="app">
+    </div>
+    <?php
+
+    $shortcode_content = ob_get_clean();
+
+    echo $shortcode_content;
 }
 
 add_shortcode('vue_shortcode', 'render_shortcode');
