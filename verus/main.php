@@ -43,7 +43,7 @@ function render_shortcode() {
     echo $shortcode_content;
 }
 
-add_shortcode('vue_shortcode', 'render_shortcode');
+add_shortcode('vue_shortcode', 'remder_content');
 
 
 function admin_enqueue_vue() {
