@@ -11,7 +11,7 @@ function my_admin_menu_page() {
     add_menu_page(
         'Verus Data',  // Page title
         'Staking Rewards', // Menu title
-        'manage_options',  // Capability required to access
+        //'manage_options',  // Capability required to access
         'vue-admin-page',   // Menu slug
         'render_content', // Callback function to render content
         //'dashicons-admin-plugins', // Icon URL or dashicon class
