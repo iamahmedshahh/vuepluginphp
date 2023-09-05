@@ -1,10 +1,10 @@
 <?php
 
 /*
-Plugin Name: My Admin Plugin
+Plugin Name: Verus Vue Plugin
 Description: This plugin adds an admin dashboard view.
 Version: 1.0
-Author: Your Name
+Author: Ahmed Shah
 */
 
 function my_admin_menu_page() {
@@ -13,7 +13,7 @@ function my_admin_menu_page() {
         'Staking Rewards', // Menu title
         'manage_options',  // Capability required to access
         'my-admin-page',   // Menu slug
-        'my_admin_page_callback', // Callback function to render content
+        'render_content', // Callback function to render content
         'dashicons-admin-plugins', // Icon URL or dashicon class
         20 // Menu position
     );
@@ -21,7 +21,7 @@ function my_admin_menu_page() {
 add_action('admin_menu', 'my_admin_menu_page');
 
 
-function my_admin_page_callback() {
+function render_content() {
     ?>
         <h1>Verus Blocks</h1>
         <div id="app">
