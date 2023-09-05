@@ -28,7 +28,16 @@ function render_content() {
         </div>
 <?php
 }
-add_shortcode('vue_shortcode', 'my_shortcode_function');
+
+function render_shortcode() {
+    ?>
+        <h1>Verus Blocks</h1>
+        <div id="app">
+        </div>
+<?php
+}
+
+add_shortcode('vue_shortcode', 'render_shortcode');
 
 
 function admin_enqueue() {
