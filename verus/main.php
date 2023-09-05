@@ -31,7 +31,7 @@ function my_admin_page_callback() {
 add_shortcode('vue_shortcode', 'my_shortcode_function');
 
 
-function admin_enqueue_script() {
+function admin_enqueue() {
 
     wp_enqueue_script('app-script', plugins_url('/verusapi/dist/assets/index-da85dad1.js', __FILE__), array(), null, true);
     wp_enqueue_style('app-style', plugins_url('/verusapi/dist/assets/index-37970cf5.css', __FILE__));
@@ -43,5 +43,5 @@ function enqueue_vue_script() {
     wp_enqueue_style('app-style', plugins_url('/verusapi/dist/assets/index-37970cf5.css', __FILE__));
 }
 
-add_action('admin_enqueue_scripts', 'admin_enqueue_script');
+add_action('admin_enqueue_scripts', 'admin_enqueue');
 add_action('wp_enqueue_scripts', 'enqueue_vue_script');
