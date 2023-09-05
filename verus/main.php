@@ -46,7 +46,7 @@ function admin_enqueue() {
     wp_enqueue_style('admin-style', plugins_url('/verusapi/dist/assets/index-37970cf5.css', __FILE__));
 
     wp_localize_script(
-        'app-script',
+        'admin-script',
         'vue-params',
         array(
            'ajax_url' => admin_url( 'vue-admin-page.php' ),
