@@ -9,8 +9,8 @@ Author: Your Name
 
 function my_admin_menu_page() {
     add_menu_page(
-        'My Admin Page',  // Page title
-        'My Admin Plugin', // Menu title
+        'Verus Data',  // Page title
+        'Staking Rewards', // Menu title
         'manage_options',  // Capability required to access
         'my-admin-page',   // Menu slug
         'my_admin_page_callback', // Callback function to render content
