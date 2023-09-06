@@ -27,7 +27,7 @@ add_action('admin_menu', 'verus_vue_admin_menu_page');
 function verus_vue_render_content() {
     ?>
     <h1><?php _e('Verus Blocks'); ?></h1>
-    <div id="app">
+    <div id="plugin-verusvueapp">
     </div>
     <?php
 }
