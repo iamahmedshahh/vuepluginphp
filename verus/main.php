@@ -36,8 +36,8 @@ add_shortcode('verus-vue', 'verus_vue_render_content'); // Short code usage: [ve
 
 function admin_enqueue_vue_scripts( $hook ) {
     if ( 'toplevel_page_verus-vue' === $hook ) {
-        wp_enqueue_script('app-script', plugins_url('/verusapi/dist/assets/index-da85dad1.js', __FILE__), array(), null, true);
-        wp_enqueue_style('app-style', plugins_url('/verusapi/dist/assets/index-37970cf5.css', __FILE__));
+        wp_enqueue_script('app-script', plugins_url('/verusapi/dist/assets/index-63e4edbd.js', __FILE__), array(), null, true);
+        wp_enqueue_style('app-style', plugins_url('/verusapi/dist/assets/index-438d7313.css', __FILE__));
 
         error_log($hook); // For testing (to be removed)
     }
@@ -45,7 +45,7 @@ function admin_enqueue_vue_scripts( $hook ) {
 add_action('admin_enqueue_scripts', 'admin_enqueue_vue_scripts');
 
 function front_enqueue_vue_scripts() {
-    wp_enqueue_script('app-script', plugins_url('/verusapi/dist/assets/index-da85dad1.js', __FILE__), array(), null, true);
-    wp_enqueue_style('app-style', plugins_url('/verusapi/dist/assets/index-37970cf5.css', __FILE__));
+    wp_enqueue_script('app-script', plugins_url('/verusapi/dist/assets/index-63e4edbd.js', __FILE__), array(), null, true);
+    wp_enqueue_style('app-style', plugins_url('/verusapi/dist/assets/index-438d7313.css', __FILE__));
 }
 add_action('wp_enqueue_scripts', 'front_enqueue_vue_scripts');
