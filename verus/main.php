@@ -26,12 +26,17 @@ add_action('admin_menu', 'verus_vue_admin_menu_page');
 
 function verus_vue_render_content() {
     ?>
-    <h1><?php _e('Verus Blocks'); ?></h1>
+    <h1>Verus Blocks</h1>
     <div id="plugin-verusvueapp">
     </div>
     <?php
 }
-add_shortcode('verus-vue', 'verus_vue_render_content'); // Short code usage: [verus-vue]
+
+function verus_vue_render_frontend() {
+
+    return '<div id="plugin-verusvueapp"></div>';
+}
+add_shortcode('verus-vue', 'verus_vue_render_frontend'); // Short code usage: [verus-vue]
 
 
 function admin_enqueue_vue_scripts( $hook ) {
