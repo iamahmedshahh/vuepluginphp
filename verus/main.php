@@ -7,47 +7,45 @@ Version: 1.0
 Author: Ahmed Shah
 */
 
-function my_admin_menu_page() {
+if ( ! defined( 'ABSPATH' ) ) {
+    exit;
+}
+
+function verus_vue_admin_menu_page() {
     add_menu_page(
-        'Verus Data',  // Page title
-        'Staking Rewards', // Menu title
+        __('Verus Data'),  // Page title
+        __('Staking Rewards'), // Menu title
         'manage_options',  // Capability required to access
-        'vue-admin-page',   // Menu slug
-        'render_content', // Callback function to render content
-        //'dashicons-admin-plugins', // Icon URL or dashicon class
-        20, // Menu position
+        'verus-vue',   // Menu slug
+        'verus_vue_render_content', // Callback function to render content
+        'dashicons-admin-plugins', // Icon URL or dashicon class
+        10 // Menu position
     );
 }
-add_action('admin_menu', 'my_admin_menu_page');
+add_action('admin_menu', 'verus_vue_admin_menu_page');
 
-
-function render_content() {
+function verus_vue_render_content() {
     ?>
-        <h1>Verus Blocks</h1>
-        <div id="plugin-verusvueapp">
-        </div>
-<?php
+    <h1><?php _e('Verus Blocks'); ?></h1>
+    <div id="app">
+    </div>
+    <?php
 }
+add_shortcode('verus-vue', 'verus_vue_render_content'); // Short code usage: [verus-vue]
 
-function render_shortcode() {
 
-    return '<div id="plugin-verusvueapp"></div>';
+function admin_enqueue_vue_scripts( $hook ) {
+    if ( 'toplevel_page_verus-vue' === $hook ) {
+        wp_enqueue_script('app-script', plugins_url('/verusapi/dist/assets/index-da85dad1.js', __FILE__), array(), null, true);
+        wp_enqueue_style('app-style', plugins_url('/verusapi/dist/assets/index-37970cf5.css', __FILE__));
+
+        error_log($hook); // For testing (to be removed)
+    }
 }
+add_action('admin_enqueue_scripts', 'admin_enqueue_vue_scripts');
 
-add_shortcode('vue_shortcode', 'render_shortcode');
-
-
-// function admin_enqueue_vue() {
-
-//     wp_enqueue_script('adminscript', plugins_url('/verusapi/dist/assets/index-9824926f.js', __FILE__), array(), null, true);
-//     wp_enqueue_style('adminstyle', plugins_url('/verusapi/dist/assets/index-438d7313.css', __FILE__));
-// }
-
-function enqueue_vue_script() {
-
-    wp_enqueue_script('vue-fontend-script', plugins_url('/verusapi/dist/assets/index-63e4edbd.js', __FILE__), array(), null, true);
-    wp_enqueue_style('vue-frontend-style', plugins_url('/verusapi/dist/assets/index-438d7313.css', __FILE__));
+function front_enqueue_vue_scripts() {
+    wp_enqueue_script('app-script', plugins_url('/verusapi/dist/assets/index-da85dad1.js', __FILE__), array(), null, true);
+    wp_enqueue_style('app-style', plugins_url('/verusapi/dist/assets/index-37970cf5.css', __FILE__));
 }
-
-add_action('admin_enqueue_scripts', 'enqueue_vue_script');
-add_action('wp_enqueue_scripts', 'enqueue_vue_script');
+add_action('wp_enqueue_scripts', 'front_enqueue_vue_scripts');
