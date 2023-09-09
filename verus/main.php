@@ -2,8 +2,8 @@
 
 /*
 Plugin Name: Verus Vue Plugin
-Description: This plugin adds an admin dashboard view.
-Version: 1.0
+Description: This plugin displays verus staked block data .
+Version: 2.0
 Author: Ahmed Shah
 */
 
